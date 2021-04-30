@@ -3,6 +3,12 @@ import "./App.css";
 import React, { Component, useState } from "react";
 import axios from "axios";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
+import {
+  Dropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+} from "react-bootstrap";
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -43,6 +49,17 @@ function App() {
         <div>
           <input type="file" onChange={onFileChange} />
           <button onClick={onFileUpload}>Upload!</button>
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              Dropdown Button
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
         {/* {this.fileData()} */}
       </div>
